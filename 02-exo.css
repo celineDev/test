@@ -1,0 +1,46 @@
+/* responsive */
+section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+section form {
+  animation: apparition 1s;
+}
+@media screen and (min-width:481px) and (max-width:720px) {
+  section {
+    grid-template-columns: 1fr;
+  }
+}
+
+iframe {
+  animation: map 1s;
+}
+
+@keyframes apparition {
+  from {
+    transform: translate(-2000px);
+    background: #35495e;
+  }
+  to {
+    transform: translate(0);
+    background: #fff;
+  }
+}
+@keyframes map {
+  from {
+    transform: translate(2000px);
+    background: #c9485b;
+  }
+  to {
+    transform: translate(0);
+    background: #fff;
+  }
+}
+/*
+
+faire apparaitre la div contenant l'iframe depuis la droite
+en + changer la couleur de fond de rouge vers le blanc
+utiliser les variables / les mixin / l'imbrication (nesting)
+*/
+
+/*# sourceMappingURL=02-exo.css.map */

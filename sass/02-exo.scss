@@ -1,0 +1,58 @@
+// sass  --watch ./sass/02-exo.scss ./02-exo.css
+
+$grille1: 1fr 1fr;
+
+/* responsive */
+
+$smartphone-portrait: "screen and (max-width:350px)";
+$smartphone-paysage: "screen and (min-width:351px) and (max-width:480px)";
+$tablette-portrait: "screen and (min-width:481px) and (max-width:720px)";
+$tablette-paysage: "screen and (min-width:721px) and (max-width:960px)";
+$ordi: "screen and (min-width:961px)";
+
+@mixin left-apparition{
+    @keyframes apparition{
+        from{transform: translate(-2000px);
+            background:#35495e;}
+        to{transform: translate(0);
+            background:#fff;}
+    }
+}
+
+@mixin carte{
+    @keyframes map{
+        from{transform: translate(2000px);
+        background: #c9485b;}
+        to{transform: translate(0);
+            background: #fff;}
+    }
+}
+
+section{
+    display: grid;
+    grid-template-columns: $grille1;
+    form{
+        animation: apparition 1s;
+    }
+    @media #{$tablette-portrait}{
+        grid-template-columns: 1fr;        
+    }
+}
+
+iframe{
+    animation: map 1s;
+}
+
+@include left-apparition();
+@include carte();
+
+
+
+
+
+/*
+
+faire apparaitre la div contenant l'iframe depuis la droite
+en + changer la couleur de fond de rouge vers le blanc
+utiliser les variables / les mixin / l'imbrication (nesting)
+*/

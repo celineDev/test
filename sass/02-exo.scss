@@ -1,14 +1,9 @@
 // sass  --watch ./sass/02-exo.scss ./02-exo.css
+@import "./responsive";
 
 $grille1: 1fr 1fr;
 
 /* responsive */
-
-$smartphone-portrait: "screen and (max-width:350px)";
-$smartphone-paysage: "screen and (min-width:351px) and (max-width:480px)";
-$tablette-portrait: "screen and (min-width:481px) and (max-width:720px)";
-$tablette-paysage: "screen and (min-width:721px) and (max-width:960px)";
-$ordi: "screen and (min-width:961px)";
 
 @mixin left-apparition{
     @keyframes apparition{
@@ -28,31 +23,54 @@ $ordi: "screen and (min-width:961px)";
     }
 }
 
+.container{
+    margin: 0 auto;
+    width: 960px;
+    @media #{$smartphone-portrait},#{$smartphone-paysage},#{$tablette-portrait},#{$tablette-paysage}{
+        width: 100%;
+    }
+
+}
+
+// cette règle garantie que l'iframe ne va pas dépasser de la colonne de la grille
+iframe {
+    width: 100% !important;
+    height: 300px !important;
+  }
+
 section{
     display: grid;
     grid-template-columns: $grille1;
+    grid-gap: 30px;
+    align-items: center;
     form{
         animation: apparition 1s;
+    }
+    iframe{
+        animation: map 1s;
     }
     @media #{$tablette-portrait}{
         grid-template-columns: 1fr;        
     }
 }
 
-iframe{
-    animation: map 1s;
+form div{
+    margin: 10px 0;
+    &:first-child{
+        display: grid;
+        grid-template-columns: 1fr 6fr;
+        grid-gap: 10px;
+    }
+    &:nth-child(2){
+        display: grid;
+        grid-template-columns: 1fr 6fr;
+        grid-gap: 10px;
+    }
+    &:last-child{
+        display: grid;
+        justify-content: center;
+    }
 }
 
 @include left-apparition();
 @include carte();
-
-
-
-
-
-/*
-
-faire apparaitre la div contenant l'iframe depuis la droite
-en + changer la couleur de fond de rouge vers le blanc
-utiliser les variables / les mixin / l'imbrication (nesting)
-*/

@@ -15,47 +15,62 @@
         }
 
         article:first-child {
-            background: yellow;
             animation: art1 1s;
         }
 
         @keyframes art1 {
             from {
                 transform: translateX(-600px);
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 0;
             }
 
             to {
                 transform: translateX(0);
+                opacity: 1;
             }
         }
 
         article:nth-child(2) {
-            background: red;
             animation: art2 1s;
         }
 
         @keyframes art2 {
             from {
                 transform: translateX(-500px);
+                opacity: 0;
+            }
+
+            60% {
+                opacity: 0;
             }
 
             to {
                 transform: translateX(0);
+                opacity: 1;
             }
         }
 
         article:last-child {
-            background: red;
             animation: art3 1s;
         }
 
         @keyframes art3 {
             from {
                 transform: translateX(-400px);
+                opacity: 0;
+            }
+
+            70% {
+                opacity: 0;
             }
 
             to {
                 transform: translateX(0);
+                opacity: 1;
             }
         }
     </style>

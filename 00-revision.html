@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        section:first-child {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+        }
+
+        article:first-child {
+            background: yellow;
+            animation: art1 1s;
+        }
+
+        @keyframes art1 {
+            from {
+                transform: translateX(-600px);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        article:nth-child(2) {
+            background: red;
+            animation: art2 1s;
+        }
+
+        @keyframes art2 {
+            from {
+                transform: translateX(-500px);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        article:last-child {
+            background: red;
+            animation: art3 1s;
+        }
+
+        @keyframes art3 {
+            from {
+                transform: translateX(-400px);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- section>article*3>(h2>lorem3)+(p>lorem30)+button>{lire la suite} -->
+        <section>
+            <article>
+                <div>
+                    <h2>Lorem, ipsum dolor.</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit, at. Impedit rem quod ea deleniti
+                        quos facere magni magnam fugit! Ipsum ad porro eius minus aut dolore non quo vitae.</p>
+                </div>
+
+                <button>lire la suite</button>
+            </article>
+            <article>
+                <div>
+                    <h2>Accusantium, omnis optio.</h2>
+                    <p>Iusto, sapiente. Esse, eligendi laboriosam! Quaerat in libero ratione et quibusdam, officia quis,
+                        amet culpa, iure dolores perspiciatis excepturi? Autem quidem quod assumenda. Quod maxime
+                        laudantium harum quas veniam earum!</p>
+                </div>
+
+                <button>lire la suite</button>
+            </article>
+            <article>
+                <div>
+                    <h2>Adipisci, voluptate rerum?</h2>
+                    <p>Necessitatibus aut, quae unde obcaecati sunt eveniet quos ipsam. Obcaecati officiis ea distinctio
+                        dolores magni id temporibus culpa similique deserunt, quam tenetur at quae debitis corporis
+                        dignissimos architecto asperiores amet?</p>
+                </div>
+                <button>lire la suite</button>
+            </article>
+        </section>
+        <!-- section>figure*2>img[src="https://via.placeholder.com/700x400"]+figcaption>lorem20 -->
+        <section>
+            <figure>
+                <div></div>
+                <figcaption>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque vitae tempore quasi enim
+                    sint eius fugiat minima, animi eveniet tempora?</figcaption>
+            </figure>
+            <figure>
+                <div></div>
+                <figcaption>Maxime accusantium similique blanditiis culpa magni, eaque tempore itaque adipisci obcaecati
+                    inventore asperiores esse quo error sint ducimus cum animi.</figcaption>
+            </figure>
+        </section>
+    </div>
+
+</body>
+
+</html>

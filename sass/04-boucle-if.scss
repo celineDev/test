@@ -20,7 +20,7 @@ stocker des tableaux dans une variable
 virgule entre les valeurs d'un tableau = tableau
 */
 
-$pourcent : 0%, 20%, 40%, 50%;
+$pourcent : 0, 20, 40, 50;
 // pour une ligne de nbr qui ne se suit pas
 
 @each $p in $pourcent {
